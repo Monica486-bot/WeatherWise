@@ -11,10 +11,10 @@ Features
 - Responsive design for mobile and desktop users.
 
  Technologies Used
-- **Frontend**: HTML, CSS, JavaScript
-- **API**: OpenWeather API
-- **Server Deployment**: Ubuntu web servers
-- **Load Balancer**: HAProxy
+- Frontend: HTML, CSS, JavaScript
+- API: OpenWeather API
+- Server Deployment: Ubuntu web servers
+- Load Balancer: HAProxy
 
 Getting Started
 
@@ -39,13 +39,11 @@ Prerequisites
    ```
 4. Start the application:
    ```sh
-   node server.js  # If using a backend server
-   ```
-   Or simply open `index.html` in a browser if running as a static web app.
+   node server.js 
 
-## Deployment Instructions
+Deployment Instructions
 
-### Web Server Setup (Web01 & Web02)
+ Web Server Setup (Web01 & Web02)
 1. Copy the application files to each server:
    ```sh
    scp -r openweather-app/ user@web01:/var/www/html/
@@ -58,7 +56,7 @@ Prerequisites
    sudo systemctl restart nginx
    ```
 
-### Load Balancer Configuration (Lb01)
+ Load Balancer Configuration (Lb01)
 1. Install HAProxy:
    ```sh
    sudo apt update && sudo apt install haproxy -y
@@ -83,30 +81,33 @@ Prerequisites
    sudo systemctl restart haproxy
    ```
 
-## API Documentation
-- **OpenWeather API**: [https://openweathermap.org/api](https://openweathermap.org/api)
-- **Endpoints Used**:
+ API Documentation
+- OpenWeather API: [https://openweathermap.org/api](https://openweathermap.org/api)
+- Endpoints Used:
   - `https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric`
 
-## Error Handling
+Error Handling
 - Displays user-friendly error messages for:
   - Invalid city names
   - API request failures
   - Network connectivity issues
 
-## Challenges & Solutions
-- **Handling API Key Security**: Implemented environment variables and `.gitignore` to prevent key exposure.
-- **Ensuring Deployment Across Servers**: Used HAProxy load balancing for redundancy and availability.
-- **Optimizing Performance**: Implemented caching for API responses to reduce load times.
+Challenges & Solutions
+- Handling API Key Security: Implemented environment variables and `.gitignore` to prevent key exposure.
+- Ensuring Deployment Across Servers: Used HAProxy load balancing for redundancy and availability.
+- Optimizing Performance: Implemented caching for API responses to reduce load times.
 
-## Attribution
+ Attribution
 - OpenWeather API
 - HAProxy Documentation
 - Nginx Documentation
 
-## Demo Video
-A short demo video showcasing the application’s functionality can be found here: [Demo Video Link]
+ Demo Video
+A short demo video showcasing the application’s functionality can be found here: [Demo Video Link](https://www.youtube.com/watch?v=c3zNJXIZfQU)
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Live Version
+You can access the live version of the application here: [App Link](http://monicaakoi.tech/)
+
+
+
 
